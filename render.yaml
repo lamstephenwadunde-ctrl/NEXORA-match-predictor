@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: matchscore-ai
+    runtime: node
+    plan: free
+
+    buildCommand: npm install
+    startCommand: npm start
+
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: PORT
+        value: 10000
+
+      - key: API_FOOTBALL_KEY
+        sync: false
+
+      - key: SPORTMONKS_TOKEN
+        sync: false
+
+      - key: DATABASE_URL
+        sync: false
+
+      - key: CACHE_TTL_MS
+        value: 300000
+
+      - key: LIVE_CACHE_TTL_MS
+        value: 15000
+
+      - key: REQUEST_TIMEOUT_MS
+        value: 12000
+
+      - key: DEFAULT_TIMEZONE
+        value: Africa/Kampala
+
+      - key: MAX_SCORE_GOALS
+        value: 7
